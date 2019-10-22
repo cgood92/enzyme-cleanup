@@ -1,6 +1,6 @@
 import reactDOM from 'react-dom'
 
-const attachTo = global.document.createElement('div')
+const attachments = []
 
 export const makeAdapter = Adapter => {
 	class ReactAdapterWithMountTracking extends Adapter {
@@ -8,9 +8,14 @@ export const makeAdapter = Adapter => {
 			super(...args)
 		}
 		createRenderer(options){
+			const attachTo = options.attachTo || global.document.createElement('div')
+
+			attachments.push(attachTo)
+
 			// Provide a default option on each render for attachTo, being a global div that we can unmount later
-			Object.assign(options, { attachTo: options.attachTo || attachTo })
-			return Adapter.prototype.createRenderer.call(this, options)
+			const newOptions = Object.assign({}, options, { attachTo })
+
+			return Adapter.prototype.createRenderer.call(this, newOptions)
 		}
 	}
 
@@ -18,6 +23,8 @@ export const makeAdapter = Adapter => {
 }
 
 export const cleanup = () => {
-	// Unmount react component after each test
-	reactDOM.unmountComponentAtNode(attachTo)
+	attachments.forEach(node => {
+		// Unmount react component after each test
+		reactDOM.unmountComponentAtNode(node)
+	})
 }
