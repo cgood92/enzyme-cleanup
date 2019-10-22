@@ -2,11 +2,11 @@
   "name": "enzyme-cleanup",
   "version": "1.0.0",
   "description": "a utility to unmount enzyme renders",
-  "main": "index.js",
+  "main": "bundle.cjs.js",
   "jsnext:main": "index.js",
   "module": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup index.js --format cjs --file bundle.cjs.js"
   },
   "peerDependencies": {
     "react-dom": "*"
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/cgood92/enzyme-cleanup/issues"
   },
-  "homepage": "https://github.com/cgood92/enzyme-cleanup#readme"
+  "homepage": "https://github.com/cgood92/enzyme-cleanup#readme",
+  "devDependencies": {
+    "rollup": "^1.25.1"
+  }
 }
