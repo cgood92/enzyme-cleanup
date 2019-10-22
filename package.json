@@ -1,0 +1,30 @@
+{
+  "name": "enzyme-cleanup",
+  "version": "1.0.0",
+  "description": "a utility to unmount enzyme renders",
+  "main": "index.js",
+  "jsnext:main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react-dom": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgood92/enzyme-cleanup.git"
+  },
+  "keywords": [
+    "enzyme",
+    "cleanup",
+    "unmount",
+    "render"
+  ],
+  "author": "Clint Goodman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgood92/enzyme-cleanup/issues"
+  },
+  "homepage": "https://github.com/cgood92/enzyme-cleanup#readme"
+}
