@@ -8,8 +8,8 @@ See [this issue](https://github.com/airbnb/enzyme/issues/911) for more informati
 ## To install
 
 ```bash
-npm i -D eynzme-cleanup 
-# or yarn add -D eynzme-cleanup
+npm i -D enzyme-cleanup
+# or yarn add -D enzyme-cleanup
 ```
 
 Then, add this to your jest [setup script](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array).
